@@ -5,7 +5,7 @@ body {
   font-family: var(--font-satoshi), system-ui, sans-serif;
 }
 
-/* Dark mode configuration for next-themes */
+/* Default theme variables (light mode) */
 :root {
   --color-background: #ffffff;
   --color-text: #000000;
@@ -26,7 +26,52 @@ body {
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
-/* Apply dark mode styles when data-theme="dark" */
+/* Apply dark theme as default for users who prefer dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-background: hsl(0, 0%, 5%);
+    --color-text: hsl(0, 0%, 95%);
+    --color-theme-border: #212121;
+    --color-main-border: #262626;
+    --color-bio: hsl(0, 0%, 70%);
+    --color-tab-switch-bg: #262626;
+    --color-project-card-description: hsl(0, 0%, 50%);
+    --color-project-card-badge-border: transparent;
+    --color-project-card-badge-bg: #262626;
+    --color-project-card-badge-shadow: inset 1px 1px 1px 0
+      rgba(160, 160, 160, 0.2);
+    --color-project-card-badge-icon-loader: #404040;
+    --color-experience-card-description: hsl(0, 0%, 50%);
+    --color-tool-card-description: hsl(0, 0%, 70%);
+    --color-hover-card-bg: #1a1a1a;
+    --color-hover-card-border: #262626;
+    --color-hover-card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5),
+      0 10px 10px -5px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Explicit light theme (overrides media query) */
+[data-theme="light"] {
+  --color-background: #ffffff;
+  --color-text: #000000;
+  --color-theme-border: #e2e5e9;
+  --color-main-border: #a8b0bd;
+  --color-bio: hsl(0, 0%, 40%);
+  --color-tab-switch-bg: #f3f4f6;
+  --color-project-card-description: hsl(0, 0%, 40%);
+  --color-project-card-badge-border: #cccccc;
+  --color-project-card-badge-bg: transparent;
+  --color-project-card-badge-shadow: none;
+  --color-project-card-badge-icon-loader: #e2e5e9;
+  --color-experience-card-description: hsl(0, 0%, 60%);
+  --color-tool-card-description: hsl(0, 0%, 20%);
+  --color-hover-card-bg: #ffffff;
+  --color-hover-card-border: transparent;
+  --color-hover-card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+/* Explicit dark theme (overrides media query) */
 [data-theme="dark"] {
   --color-background: hsl(0, 0%, 5%);
   --color-text: hsl(0, 0%, 95%);

@@ -44,6 +44,38 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  // next-themes uses 'theme' as the default key
+                  var storedTheme = localStorage.getItem('theme');
+                  var systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var systemTheme = systemPrefersDark ? 'dark' : 'light';
+                  
+                  var resolvedTheme;
+                  if (!storedTheme || storedTheme === 'system') {
+                    resolvedTheme = systemTheme;
+                  } else {
+                    resolvedTheme = storedTheme;
+                  }
+                  
+                  document.documentElement.setAttribute('data-theme', resolvedTheme);
+                } catch (e) {
+                  // Fallback to system preference or dark mode
+                  var fallbackTheme = 'dark';
+                  try {
+                    fallbackTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  } catch (e2) {}
+                  document.documentElement.setAttribute('data-theme', fallbackTheme);
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className={`${satoshi.variable} antialiased`}>
         <ThemeProvider
           attribute="data-theme"
