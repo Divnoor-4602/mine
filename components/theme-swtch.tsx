@@ -5,13 +5,28 @@ import { MoonStarsIcon, SunIcon } from "@phosphor-icons/react";
 import { useTheme } from "next-themes";
 
 const ThemeSwitch = () => {
-  const { theme, setTheme } = useTheme();
+  const { setTheme, resolvedTheme } = useTheme();
+  const [isMounted, setIsMounted] = React.useState(false);
 
-  console.log(theme);
+  React.useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   const handleThemeSwitch = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
   };
+
+  // Show loading state during hydration
+  if (!isMounted) {
+    return (
+      <div
+        className="rounded-full bg-[--color-background] p-2 cursor-pointer border max-w-fit animate-pulse"
+        style={{ borderColor: "var(--color-theme-border)" }}
+      >
+        <SunIcon className="text-[--color-text] w-4 h-4" />
+      </div>
+    );
+  }
 
   return (
     <div
@@ -19,7 +34,7 @@ const ThemeSwitch = () => {
       style={{ borderColor: "var(--color-theme-border)" }}
       onClick={handleThemeSwitch}
     >
-      {theme === "dark" ? (
+      {resolvedTheme === "dark" ? (
         <MoonStarsIcon className="text-[--color-text] w-4 h-4" />
       ) : (
         <SunIcon className="text-[--color-text] w-4 h-4" />

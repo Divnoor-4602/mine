@@ -47,7 +47,7 @@ export default function RootLayout({
       <body className={`${satoshi.variable} antialiased`}>
         <ThemeProvider
           attribute="data-theme"
-          defaultTheme="dark"
+          defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
