@@ -2,7 +2,7 @@
 
 import React from "react";
 import { MoonStarsIcon, SunIcon } from "@phosphor-icons/react";
-import { useTheme } from "next-themes";
+import { useTheme } from "./theme-provider";
 
 const ThemeSwitch = () => {
   const { setTheme, resolvedTheme } = useTheme();

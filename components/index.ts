@@ -6,6 +6,7 @@ import ThemeSwitch from "./theme-swtch";
 import MaxWidthWrapper from "./max-width-wrapper";
 import PageFooter from "./page-footer";
 import LiveLinkPreview from "./live-link-preview";
+import { ThemeProvider } from "./theme-provider";
 
 export {
   IntroductionHeader,
@@ -17,4 +18,5 @@ export {
   TabContent,
   PageFooter,
   LiveLinkPreview,
+  ThemeProvider,
 };

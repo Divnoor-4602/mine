@@ -3,7 +3,7 @@
 import React from "react";
 import { TTools } from "@/constants";
 import StackIcon from "tech-stack-icons";
-import { useTheme } from "next-themes";
+import { useTheme } from "../theme-provider";
 import Image from "next/image";
 
 export type TToolCard = {

@@ -1,7 +1,7 @@
 "use client";
 
 import StackIcon from "tech-stack-icons";
-import { useTheme } from "next-themes";
+import { useTheme } from "./theme-provider";
 import React from "react";
 import Image from "next/image";
 
@@ -75,7 +75,9 @@ const CustomStackBadge = ({ name, icon, customIcon }: TCustomStackBadge) => {
       suppressHydrationWarning
     >
       {renderIcon()}
-      <span className="text-xs tracking-wide">{name}</span>
+      <span className="text-xs tracking-wide text-[var(--color-text)]">
+        {name}
+      </span>
     </div>
   );
 };
