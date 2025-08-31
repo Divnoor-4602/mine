@@ -44,6 +44,31 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const savedTheme = localStorage.getItem('theme') || 'system';
+                  let theme = 'dark'; // Default to dark since that's your system preference
+                  
+                  if (savedTheme === 'system') {
+                    theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                  } else {
+                    theme = savedTheme;
+                  }
+                  
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (e) {
+                  // Fallback to dark mode if anything fails
+                  document.documentElement.setAttribute('data-theme', 'dark');
+                }
+              })();
+            `,
+          }}
+        />
+      </head>
       <body className={`${satoshi.variable} antialiased`}>
         <ThemeProvider defaultTheme="system" storageKey="theme">
           {children}
