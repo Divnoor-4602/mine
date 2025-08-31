@@ -1,15 +1,25 @@
 @import "tailwindcss" theme(dark-mode: "[data-theme='dark']");
 
-/* Use the custom font and apply theme colors to html and body */
-html {
-  background-color: var(--color-background);
-  color: var(--color-text);
-}
+@layer base {
+  /* Smooth transitions for theme changes */
+  html {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: color 350ms ease, background-color 350ms ease;
+  }
 
-body {
-  font-family: var(--font-satoshi), system-ui, sans-serif;
-  background-color: var(--color-background);
-  color: var(--color-text);
+  body {
+    font-family: var(--font-satoshi), system-ui, sans-serif;
+    background-color: var(--color-background);
+    color: var(--color-text);
+    transition: color 350ms ease, background-color 350ms ease;
+  }
+
+  /* Only apply theme-related transitions, NOT transform or opacity */
+  html * {
+    transition: color 350ms ease, background-color 350ms ease,
+      border-color 350ms ease, box-shadow 350ms ease;
+  }
 }
 
 /* Default theme variables (light mode) */
