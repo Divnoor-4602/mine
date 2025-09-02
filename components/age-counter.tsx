@@ -58,7 +58,7 @@ const AgeCounter = () => {
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <motion.div className="text-xs font-medium font-mono mb-1 relative">
+      <motion.div className="text-xs font-medium font-mono mb-1 relative text-[var(--color-text)]">
         <motion.span
           className="absolute inset-0"
           initial={{ opacity: 0 }}

@@ -30,8 +30,13 @@ const ProjectCard = ({
                 href={githubLink}
                 target="_blank"
               >
-                <span className="text-xs">GitHub</span>
-                <LinkIcon size={12} />
+                <span className="text-xs text-[var(--color-project-card-description)]">
+                  GitHub
+                </span>
+                <LinkIcon
+                  size={12}
+                  className="text-[var(--color-project-card-description)]"
+                />
               </Link>
             )}
             {liveLink && (

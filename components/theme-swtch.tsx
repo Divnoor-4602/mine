@@ -35,9 +35,9 @@ const ThemeSwitch = () => {
       onClick={handleThemeSwitch}
     >
       {resolvedTheme === "dark" ? (
-        <MoonStarsIcon className="text-[--color-text] w-4 h-4" />
+        <MoonStarsIcon className="text-[var(--color-text)] w-4 h-4" />
       ) : (
-        <SunIcon className="text-[--color-text] w-4 h-4" />
+        <SunIcon className="text-[var(--color-text)] w-4 h-4" />
       )}
     </div>
   );

@@ -10,7 +10,7 @@ const IntroductionHeader = () => {
       <div className="flex items-end justify-between max-sm:flex-col-reverse max-sm:items-start">
         {/* Introduction */}
         <motion.h1
-          className="font-bold text-2xl tracking-tight pt-2"
+          className="font-bold text-2xl tracking-tight pt-2 text-[var(--color-text)]"
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2, ease: "easeOut" }}
