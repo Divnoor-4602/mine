@@ -30,13 +30,23 @@ const CustomStackBadge = ({ name, icon, customIcon }: TCustomStackBadge) => {
 
     if (customIcon) {
       // Check if this is a theme-aware icon (has light/dark variants)
-      const themeAwareIcons = ["expo-icon", "drizzle-icon"];
+      const themeAwareIcons = ["expo-icon", "drizzle-icon", "resend"];
       const isThemeAware = themeAwareIcons.includes(customIcon);
 
       if (isThemeAware) {
         // For theme-aware icons, use the appropriate variant
-        const iconVariant =
-          resolvedTheme === "dark" ? `${customIcon}-light` : customIcon;
+        let iconVariant;
+        if (customIcon === "resend") {
+          // Resend uses resend-dark.svg and resend-light.svg
+          iconVariant =
+            resolvedTheme === "dark"
+              ? `${customIcon}-dark`
+              : `${customIcon}-light`;
+        } else {
+          // Other icons use icon-light.svg and icon.svg
+          iconVariant =
+            resolvedTheme === "dark" ? `${customIcon}-light` : customIcon;
+        }
         return (
           <Image
             src={`/images/icons/${iconVariant}.svg`}

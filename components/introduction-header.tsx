@@ -3,6 +3,7 @@
 import React from "react";
 import AgeCounter from "./age-counter";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 const IntroductionHeader = () => {
   return (
@@ -32,9 +33,15 @@ const IntroductionHeader = () => {
         viewport={{ once: true }}
       >
         I&apos;m a software engineer from Vancouver 🇨🇦, currently building{" "}
-        <span className="text-[var(--color-text)] font-bold">Radal</span> and{" "}
-        <span className="text-[var(--color-text)] font-bold">notes0</span>. I
-        research LLMs and have a passion for design.
+        <Link
+          className="text-[var(--color-text)] font-bold"
+          href="https://notes0.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          notes0
+        </Link>
+        . I research LLMs and have a passion for design.
       </motion.div>
     </header>
   );

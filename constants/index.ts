@@ -85,6 +85,24 @@ export const tabs: TTab[] = [
 
 export const projects: TProjects[] = [
   {
+    id: 0,
+    title: "Notes0",
+    description: "Whiteboard using voice agents",
+    image: "/images/landing/radal-logo-dark.png",
+    githubLink: "",
+    liveLink: "https://notes0.app/",
+    previewImage: "/images/notes0-preview.png",
+    techStack: [
+      { name: "Next.js", icon: "nextjs2" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "OpenAI", icon: "openai" },
+      { name: "Shadcn UI", icon: "shadcnui" },
+      { name: "Vercel", icon: "vercel" },
+      { name: "Resend", icon: "resend", customIcon: "resend" },
+      { name: "Stripe", icon: "stripe", customIcon: "stripe-logo" },
+    ],
+  },
+  {
     id: 1,
     title: "Radal",
     description: "Cursor for creating fine-tuning pipelines",
