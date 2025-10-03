@@ -98,6 +98,7 @@ export const projects: TProjects[] = [
       { name: "OpenAI", icon: "openai" },
       { name: "Shadcn UI", icon: "shadcnui" },
       { name: "Vercel", icon: "vercel" },
+      { name: "Convex", icon: "convex", customIcon: "convex-logo" },
       { name: "Resend", icon: "resend", customIcon: "resend" },
       { name: "Stripe", icon: "stripe", customIcon: "stripe-logo" },
     ],
