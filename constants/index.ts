@@ -164,6 +164,29 @@ export const projects: TProjects[] = [
 
 export const experiences: TExperience[] = [
   {
+    id: 0,
+    company: "Magic Hour AI",
+    image: "/images/landing/mh-logo.png",
+    position: [
+      {
+        id: 1,
+        title: "Software Engineering Intern",
+        description: "",
+        startDate: "2025-10-01",
+        endDate: "Present",
+        techStack: [
+          { name: "Next.js", icon: "nextjs2" },
+          { name: "React", icon: "react" },
+          { name: "TypeScript", icon: "typescript" },
+          { name: "OpenAI", icon: "openai" },
+          { name: "Shadcn UI", icon: "shadcnui" },
+        ],
+      },
+    ],
+    startDate: "2025-10-01",
+    endDate: "Present",
+  },
+  {
     id: 1,
     company: "Univeristy of the Fraser Valley",
     image: "/images/landing/ufv-logo.png",
@@ -172,16 +195,12 @@ export const experiences: TExperience[] = [
         id: 1,
         title: "Computer Science Researcher",
         description:
-          "Leading ongoing research under UFV's School of Computing to develop a cross-platform psychiatric diagnostics app powered by streaming RAG-based LLMs, real-time STT/TTS pipelines, and history-aware conversational AI.",
+          "Leading UFV research on psychiatric diagnostics using optimal LLM architectures and conversational AI.",
         startDate: "2025-02-01",
         endDate: "Present",
         techStack: [
-          { name: "Next.js", icon: "nextjs2" },
           { name: "TypeScript", icon: "typescript" },
           { name: "Python", icon: "pytorch", customIcon: "python-icon" },
-          { name: "TailwindCSS", icon: "tailwindcss" },
-          { name: "Supabase", icon: "supabase", customIcon: "supabase-icon" },
-          { name: "Expo", icon: "expo", customIcon: "expo-icon" },
           { name: "Gemini", icon: "gemini", customIcon: "gemini-icon" },
           { name: "Hugging Face", icon: "huggingface" },
           { name: "OpenAI", icon: "openai" },
@@ -193,7 +212,7 @@ export const experiences: TExperience[] = [
         id: 2,
         title: "Frontend Developer",
         description:
-          "Built and maintained a WordPress-based web app under UFV's Graphic Design Department, focusing on motion design, Laravel backend, and scalable content management for diverse users.",
+          "Built UFV Graphic Design Department's WordPress web app with motion design, Laravel backend, and scalable CMS.",
         startDate: "2025-01-01",
         endDate: "Present",
         techStack: [
@@ -217,7 +236,7 @@ export const experiences: TExperience[] = [
         id: 1,
         title: "Full Stack Developer",
         description:
-          "Developed and maintained a web app for Zippex, a startup that provides a platform for users to create and share their own zip codes.",
+          "Developed and maintained a web app for Zippex, a startup that provides a platform for local deliveries.",
         startDate: "2024-08-01",
         endDate: "2024-12-31",
         techStack: [
